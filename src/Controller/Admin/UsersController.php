@@ -35,7 +35,8 @@ class UsersController extends AppController
         $query = $this->Users->find('all', [
             'conditions' => ['Users.role' => 'admin']
         ]);
-        $users = $this->paginate($query,['limit'=> '2']);
+        // $users = $this->paginate($query,['limit'=> '2']);
+        $users=$query->all();
         // pr($users);die;
 
         $this->set(compact('users'));

@@ -56,7 +56,6 @@ class PagesController extends AppController
 
                 $mailer = new Mailer();
                 $mailer->setTransport('gmail');
-                // $mailer->setTransport(new \Cake\Mailer\Transport\DebugTransport());
 
                 $mailer
                             ->setEmailFormat('html')

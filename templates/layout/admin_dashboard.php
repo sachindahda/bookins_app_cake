@@ -11,6 +11,7 @@
     <title>Best Business Deals! | </title>
 
     <!-- Bootstrap -->
+    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link href="/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -19,6 +20,14 @@
     <!-- Animate.css -->
     <link href="/admin/vendors/animate.css/animate.min.css" rel="stylesheet">
    <link href="/admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+<!-- Datatables -->
+    
+    <link href="/admin/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/admin/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Custom Theme Style -->
     <link href="/admin/build/css/custom.min.css" rel="stylesheet">
@@ -31,22 +40,20 @@
         <!-- Side Bar -->
         <?= $this->element('admin_sidebar');?>
         <!-- Side Bar -->
-
         <!-- top navigation -->
         <?= $this->element('admin_header');?>
         <!-- /top navigation -->
-
         <!-- page content -->
         <?= $this->fetch('content') ?>
         <!-- /page content -->
 
         <!-- footer content -->
-        <footer>
+        <!-- <footer>
           <div class="pull-right">
             Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
           </div>
           <div class="clearfix"></div>
-        </footer>
+        </footer> -->
         <!-- /footer content -->
       </div>
     </div>
@@ -62,6 +69,24 @@
     <script src="/admin/vendors/nprogress/nprogress.js"></script>
     <!-- iCheck -->
     <script src="/admin/vendors/iCheck/icheck.min.js"></script>
+
+<!-- Datatables -->
+    <script src="/admin/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/admin/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/admin/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/admin/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="/admin/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/admin/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/admin/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/admin/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="/admin/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="/admin/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/admin/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="/admin/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="/admin/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="/admin/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="/admin/vendors/pdfmake/build/vfs_fonts.js"></script>
+
 
     <!-- Custom Theme Scripts -->
     <script src="/admin/build/js/custom.min.js"></script>

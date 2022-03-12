@@ -1,8 +1,8 @@
 <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title">
-                <i class="fa fa-paw"></i> <span>Best Business Deals!</span></a>
+              <a href="/admin" class="site_title">
+                <img src="/img/cropped-bestbusinessdealsheader-32x32.png"> <span>Best Business Deals!</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -10,7 +10,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="/img/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="/img/images/user.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -25,12 +25,19 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li class="active"><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li  class="<?php echo ($this->request->getParam('controller')=='Users')?'active':'';?>"><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/admin" >Dashboard</a></li>
-                      <li><a href="/admin/yo" class="<?php echo ($this->request->getParam('controller')=='Users' and $this->request->getParam('action')=='index')?'active':'';?>">Booking Requests</a></li>
+                      
                     </ul>
                   </li>
+                  <li  class="<?php echo ($this->request->getParam('controller')=='Bookings')?'active':'';?>"><a><i class="fa fa-edit"></i> Bookings <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/admin/bookings">Booking Requests</a></li>
+                      <li><a href="#">Booking Calendar</a></li>
+                    </ul>
+                  </li>
+
                 </ul>
               </div>
              
