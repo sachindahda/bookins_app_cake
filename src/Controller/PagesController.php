@@ -22,6 +22,7 @@ use Cake\Http\Exception\NotFoundException;
 use Cake\Http\Response;
 use Cake\View\Exception\MissingTemplateException;
 use Cake\Mailer\Mailer;
+use Cake\Datasource\ConnectionManager;
 
 
 /**
@@ -51,31 +52,40 @@ class PagesController extends AppController
             if($booking->getErrors()) {
                 $this->Flash->error(__('Unable to Save Appointment Details.  Please make sure you have filled all fields correctly.'));
             }else {
-                $bookingsTable->save($booking);
-                $this->Flash->success(__('Your Appointment Details have been saved and an email has been sent to you regarding the same.You will be notified via mail Once Approved '));
-
-                $mailer = new Mailer();
-                $mailer->setTransport('gmail');
-
-                $mailer
-                            ->setEmailFormat('html')
-                            ->setTo($booking->email)
-                            ->setFrom('app@bestbusinessdeals.com')
-                            ->setViewVars(['booking' => $booking])
-                            // ->setSubject(sprintf('Hello %s', $booking->name))
-                            ->setSubject('Booking Saved')
-                            ->viewBuilder()
-                                ->setTemplate('booking_saved')
-                                // ->setLayout('bookings_saved')
-                                ;
-
-                $mail_output=$mailer->deliver();
-                // pr($mail_output);die;
-
-                return  $this->redirect([
-                'controller' => 'Pages',
-                'action' => 'bookAppointment',
-            ]);
+                
+                $booking->schedule_ends_at=date('Y-m-d H:i:s', strtotime($booking->scheduled_at->format('Y-m-d H:i:s').'+'.$booking->booking_duration.' minutes'));
+                 $connection = ConnectionManager::get('default');
+                $scheduled_at=date('Y-m-d H:i:s',strtotime($booking->scheduled_at->format('Y-m-d H:i:s')));
+                $existing_booking = $connection->execute(
+                    'SELECT * FROM bookings WHERE scheduled_at between :scheduled_at and :schedule_ends_at OR schedule_ends_at between :scheduled_at and :schedule_ends_at',
+                    ['scheduled_at' => $scheduled_at,'schedule_ends_at'=>$booking->schedule_ends_at]
+                )->fetchAll('assoc'); 
+                if(isset($existing_booking) and !empty($existing_booking)){
+                    $this->Flash->error(__('Unable to Save Appointment Details Because Another Appointment exists during the requested Time Schedule.So Please Try Booking Appointment with different time.'));
+                     return  $this->redirect([
+                         'controller' => 'Pages',
+                         'action' => 'bookAppointment',
+                    ]);
+                }else{
+                    $bookingsTable->save($booking);
+                    $this->Flash->success(__('Your Appointment Details have been saved and an email has been sent to you regarding the same.You will be notified via mail Once Approved '));
+                    $mailer = new Mailer();
+                    $mailer->setTransport('gmail');
+                    $mailer
+                                ->setEmailFormat('html')
+                                ->setTo($booking->email)
+                                ->setFrom('app@bestbusinessdeals.com')
+                                ->setViewVars(['booking' => $booking])
+                                ->setSubject('Booking Saved')
+                                ->viewBuilder()
+                                    ->setTemplate('booking_saved')
+                                    ->setLayout('bookings')  ;
+                    $mail_output=$mailer->deliver();
+                        return  $this->redirect([
+                        'controller' => 'Pages',
+                        'action' => 'bookAppointment',
+                    ]);
+            }
            }
 
        }

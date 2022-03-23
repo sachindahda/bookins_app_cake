@@ -18,7 +18,7 @@
                     <!-- https://img.icons8.com/clouds/100/000000/handshake.png -->
                     <tr>
                         <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                            <h1 style="font-size: 48px; font-weight: 400; margin: 2;">Booking Confirmed!</h1> <img src="https://www.bestbusinessdeals.com.au/wp-content/uploads/2015/05/Best-Business-Deals-New-Logo-e1432819060208.png" width="99" height="61" alt="Best Business Deals." width="125" height="120" style="display: block; border: 0px;">
+                            <h1 style="font-size: 48px; font-weight: 400; margin: 2;">Booking Reminder!</h1> <img src="https://www.bestbusinessdeals.com.au/wp-content/uploads/2015/05/Best-Business-Deals-New-Logo-e1432819060208.png" width="99" height="61" alt="Best Business Deals." width="125" height="120" style="display: block; border: 0px;">
                             <!-- <img src=" https://img.icons8.com/clouds/100/000000/handshake.png" width="125" height="120" style="display: block; border: 0px;" /> -->
                         </td>
                     </tr>
@@ -30,7 +30,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;"><b>Hello <?= $booking->name?>!</b>,<br>Your Appointment Booking for Date <?= date('Y-m-d H:i:s',strtotime($booking->scheduled_at)); ?> has been Confirmed. </p>
+                            <p style="margin: 0;"><b>Hello <?= $booking->name?>!</b>,<br>This is a reminder from Best Business Deals Team about Your Upcoming  Appointment Booking with us on <?= date('Y-m-d H:i:s',strtotime($booking->scheduled_at)); ?> .</p>
                         </td>
                     </tr>
                     <!-- <tr>

@@ -30,6 +30,37 @@ class BookingsController extends AppController
         $this->set(compact('bookings'));
     }
 
+    public function calendar()
+    {
+        $this->viewBuilder()->setLayout('admin_dashboard');
+            }
+
+     public function calendarBookings()
+    {
+        $this->autoRender=False;       
+        $query=$this->Bookings->find('all', [
+             'order' => ['Bookings.created' => 'desc']
+         ]);
+        $query->enableHydration(false); // Results as arrays instead of entities
+        $bookings=$query->all();
+        // pr($bookings);die;
+        $events = array();
+        
+        if(!empty($bookings)){
+            foreach($bookings as $single){
+              $single_event=[];
+              $single_event['allDay'] = false;
+              $single_event['start'] = $single['scheduled_at'];
+              $single_event['end'] = $single['schedule_ends_at'];
+              $single_event['title'] = substr($single['description'],0,7);
+              $single_event['id']= $single['id'];
+              $events[] = $single_event;  
+            }
+        }
+        echo json_encode($events);
+        die;
+    }
+
     /**
      * View method
      *
@@ -93,7 +124,7 @@ class BookingsController extends AppController
                     ->setSubject('Booking Confirmed')
                     ->viewBuilder()
                     ->setTemplate('booking_confirmed')
-                                // ->setLayout('bookings_saved')
+                                ->setLayout('bookings')
                                 ;
 
                 $mail_output=$mailer->deliver();

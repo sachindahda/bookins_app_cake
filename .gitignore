@@ -5,6 +5,7 @@
 /logs/*
 /tmp/*
 /vendor/*
+bookings_app_cron.bat
 
 # OS generated files #
 ######################

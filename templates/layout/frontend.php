@@ -179,8 +179,8 @@ parms[5] = new Array('field_4', document.getElementById('field_4').value);
 
 page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db chrome
 ">
-	<div id="page-container" style="padding-top: 80px;">
-		<?= $this->element('front_header')?> 
+	<div id="page-container" style="/*padding-top: 80px;*/">
+		<?php //echo  $this->element('front_header')?> 
     <div id="main-content">
 				<article id="post-1761" class="post-1761 page type-page status-publish hentry">
 
@@ -216,7 +216,11 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 			</div>
 				
 				
-			</div><div class="et_pb_row et_pb_row_2">
+			</div>
+			<!-- <div class="et_pb_row et_pb_row_2">
+				<a href="http://localhost:8765/book-appointment/" id="book-appointment">Book Appointment</a>
+			</div> -->
+			<div class="et_pb_row et_pb_row_2">
 				<div class="et_pb_column et_pb_column_1_3 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough">
 				
 				
@@ -224,9 +228,9 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 				
 				
 				<div class="et_pb_blurb_content">
-					<div class="et_pb_main_blurb_image"><a href="https://www.bestbusinessdeals.com.au/office-phone/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon" data-et-multi-view="{&quot;schema&quot;:{&quot;content&quot;:{&quot;desktop&quot;:&quot;&#xe0ef;&quot;,&quot;tablet&quot;:&quot;&quot;}},&quot;slug&quot;:&quot;et_pb_blurb&quot;}" data-et-multi-view-load-tablet-hidden="true">&#xe0ef;</span></span></a></div>
+					<div class="et_pb_main_blurb_image"><a href="#/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon" data-et-multi-view="{&quot;schema&quot;:{&quot;content&quot;:{&quot;desktop&quot;:&quot;&#xe0ef;&quot;,&quot;tablet&quot;:&quot;&quot;}},&quot;slug&quot;:&quot;et_pb_blurb&quot;}" data-et-multi-view-load-tablet-hidden="true">&#xe0ef;</span></span></a></div>
 					<div class="et_pb_blurb_container">
-						<h4 class="et_pb_module_header"><a href="https://www.bestbusinessdeals.com.au/office-phone/">Office Phone</a></h4>
+						<h4 class="et_pb_module_header"><a href="#/">Office Phone</a></h4>
 						<div class="et_pb_blurb_description"><p>Whether you are a solo entrepreneur or a business with multiple offices across Australia, we have the right solution for your office phone needs.</p></div>
 					</div>
 				</div>
@@ -238,9 +242,9 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 				
 				
 				<div class="et_pb_blurb_content">
-					<div class="et_pb_main_blurb_image"><a href="https://www.bestbusinessdeals.com.au/internet/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe02b;</span></span></a></div>
+					<div class="et_pb_main_blurb_image"><a href="#/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe02b;</span></span></a></div>
 					<div class="et_pb_blurb_container">
-						<h4 class="et_pb_module_header"><a href="https://www.bestbusinessdeals.com.au/internet/">NBN & Internet</a></h4>
+						<h4 class="et_pb_module_header"><a href="#/">NBN & Internet</a></h4>
 						<div class="et_pb_blurb_description"><p>Whether you are a solo entrepreneur or a business with multiple offices across Australia, we have the right solution for your office internet needs.</p></div>
 					</div>
 				</div>
@@ -252,9 +256,9 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 				
 				
 				<div class="et_pb_blurb_content">
-					<div class="et_pb_main_blurb_image"><a href="https://www.bestbusinessdeals.com.au/inbound/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe027;</span></span></a></div>
+					<div class="et_pb_main_blurb_image"><a href="#/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe027;</span></span></a></div>
 					<div class="et_pb_blurb_container">
-						<h4 class="et_pb_module_header"><a href="https://www.bestbusinessdeals.com.au/inbound/">1300/1800 Numbers</a></h4>
+						<h4 class="et_pb_module_header"><a href="#/">1300/1800 Numbers</a></h4>
 						<div class="et_pb_blurb_description">A 1300 or 1800 number is a great asset for a growing business. People will compare you with companies that may be much larger than yours.</div>
 					</div>
 				</div>
@@ -270,9 +274,9 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 				
 				
 				<div class="et_pb_blurb_content">
-					<div class="et_pb_main_blurb_image"><a href="https://www.bestbusinessdeals.com.au/partners-recommended-suppliers/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe00b;</span></span></a></div>
+					<div class="et_pb_main_blurb_image"><a href="#/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe00b;</span></span></a></div>
 					<div class="et_pb_blurb_container">
-						<h4 class="et_pb_module_header"><a href="https://www.bestbusinessdeals.com.au/partners-recommended-suppliers/">Mobiles & Tablets</a></h4>
+						<h4 class="et_pb_module_header"><a href="#/">Mobiles & Tablets</a></h4>
 						<div class="et_pb_blurb_description">As our name suggests, we always seek out the best deals for business so have created a number of alliances with other dealers/ providers. Check out the range of partnerships with mobile phone providers and other business services here.</div>
 					</div>
 				</div>
@@ -284,9 +288,9 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 				
 				
 				<div class="et_pb_blurb_content">
-					<div class="et_pb_main_blurb_image"><a href="https://www.bestbusinessdeals.com.au/hosted-pbx/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe06f;</span></span></a></div>
+					<div class="et_pb_main_blurb_image"><a href="#/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe06f;</span></span></a></div>
 					<div class="et_pb_blurb_container">
-						<h4 class="et_pb_module_header"><a href="https://www.bestbusinessdeals.com.au/hosted-pbx/">Cloud PBX & Desktop</a></h4>
+						<h4 class="et_pb_module_header"><a href="#/">Cloud PBX & Desktop</a></h4>
 						<div class="et_pb_blurb_description">Utilising the latest technology, Best Business Deals offers a range of cloud telephony services to suit the needs of growing businesses in Australia and across the Asia-Pacific region.</div>
 					</div>
 				</div>
@@ -298,9 +302,9 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 				
 				
 				<div class="et_pb_blurb_content">
-					<div class="et_pb_main_blurb_image"><a href="https://www.bestbusinessdeals.com.au/googleapps"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe010;</span></span></a></div>
+					<div class="et_pb_main_blurb_image"><a href="#/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe010;</span></span></a></div>
 					<div class="et_pb_blurb_container">
-						<h4 class="et_pb_module_header"><a href="https://www.bestbusinessdeals.com.au/googleapps">Office365, G Suite & Other Services</a></h4>
+						<h4 class="et_pb_module_header"><a href="#/">Office365, G Suite & Other Services</a></h4>
 						<div class="et_pb_blurb_description"><p>Whether you are a solo entrepreneur or a business with multiple offices across Australia, we have the solution to your internet and office phone needs.</p></div>
 					</div>
 				</div>
@@ -316,9 +320,9 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 				
 				
 				<div class="et_pb_blurb_content">
-					<div class="et_pb_main_blurb_image"><a href="https://www.bestbusinessdeals.com.au/contact-us/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe004;</span></span></a></div>
+					<div class="et_pb_main_blurb_image"><a href="#/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe004;</span></span></a></div>
 					<div class="et_pb_blurb_container">
-						<h4 class="et_pb_module_header"><a href="https://www.bestbusinessdeals.com.au/contact-us/">Consumer Products</a></h4>
+						<h4 class="et_pb_module_header"><a href="#/">Consumer Products</a></h4>
 						<div class="et_pb_blurb_description"><p>We have access to a range of consumer telecommunications products to support our existing clients and our local community</p></div>
 					</div>
 				</div>
@@ -330,9 +334,9 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 				
 				
 				<div class="et_pb_blurb_content">
-					<div class="et_pb_main_blurb_image"><a href="https://www.bestbusinessdeals.com.au/articles/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe610;</span></span></a></div>
+					<div class="et_pb_main_blurb_image"><a href="#/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe610;</span></span></a></div>
 					<div class="et_pb_blurb_container">
-						<h4 class="et_pb_module_header"><a href="https://www.bestbusinessdeals.com.au/articles/">Contact Us</a></h4>
+						<h4 class="et_pb_module_header"><a href="#/">Contact Us</a></h4>
 						<div class="et_pb_blurb_description"><div class="textwidget"></div>
 <div class="textwidget"></div>
 <div class="textwidget">
@@ -418,4 +422,26 @@ var et_pb_box_shadow_elements = [];
 </script>
 <script type='text/javascript' src='js/web_scripts.min.js?ver=4.14.0' id='divi-custom-script-js'></script>
 <!-- <script type='text/javascript' src='js/web_assets.min.js' id='wphb-2-js'></script> -->
+<style>
+	#book-appointment {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #04AA6D;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+#book-appointment{
+  background-color: #eb6424; /* Green */
+  border: none;
+  color: white !important;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}     
+</style>
 </body>

@@ -17,6 +17,8 @@ use Cake\ORM\Entity;
  * @property string $type
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ * @property string $status
+ * @property int $booking_duration
  */
 class Booking extends Entity
 {
@@ -38,5 +40,7 @@ class Booking extends Entity
         'type' => true,
         'created' => true,
         'modified' => true,
+        'status' => true,
+        'booking_duration' => true,
     ];
 }

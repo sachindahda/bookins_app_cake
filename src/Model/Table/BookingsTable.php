@@ -93,6 +93,20 @@ class BookingsTable extends Table
             ->maxLength('type', 255)
             ->requirePresence('type', 'create')
             ->notEmptyString('type',__('Please Enter Booking Type'));
+        $validator
+            ->integer('booking_duration')
+            ->requirePresence('booking_duration', 'create')
+            ->notEmptyString('booking_duration',__('Please Enter Booking Duration(in minutes)'))
+            ->add('booking_duration', 'custom',  ['rule' => function($value, $context) {
+                    return (in_array($value,[15,30,45,60]));      
+                },
+               'message' => 'Please Enter Valid Time Duration',]);
+
+        // $validator
+        //     ->integer('schedule_ends_at')
+        //     ->requirePresence('schedule_ends_at', 'create')
+        //     ->notEmptyString('schedule_ends_at',__('Please Enter Schedule End Time'));
+            
 
         return $validator;
     }

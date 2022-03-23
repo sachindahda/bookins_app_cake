@@ -21,6 +21,10 @@
     <link href="/admin/vendors/animate.css/animate.min.css" rel="stylesheet">
    <link href="/admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
+   <!-- FullCalendar -->
+    <link href="/admin/vendors/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="/admin/vendors/fullcalendar/dist/fullcalendar.print.css" rel="stylesheet" media="print">
+
 <!-- Datatables -->
     
     <link href="/admin/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -31,35 +35,9 @@
 
     <!-- Custom Theme Style -->
     <link href="/admin/build/css/custom.min.css" rel="stylesheet">
-  </head>
-  <?= $this->Flash->render() ?>
 
-<body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <!-- Side Bar -->
-        <?= $this->element('admin_sidebar');?>
-        <!-- Side Bar -->
-        <!-- top navigation -->
-        <?= $this->element('admin_header');?>
-        <!-- /top navigation -->
-        <!-- page content -->
-        <?= $this->fetch('content') ?>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <!-- <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer> -->
-        <!-- /footer content -->
-      </div>
-    </div>
-
-    
-  <!-- jQuery -->
+    <!-- Js Starts -->
+    <!-- jQuery -->
     <script src="/admin/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
    <script src="/admin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -86,10 +64,42 @@
     <script src="/admin/vendors/jszip/dist/jszip.min.js"></script>
     <script src="/admin/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="/admin/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="/admin/vendors/moment/min/moment.min.js"></script>
+    <script src="/admin/vendors/fullcalendar/dist/fullcalendar.min.js"></script>
+    <!-- Js Ends -->
 
+    
+  </head>
+  <?= $this->Flash->render() ?>
 
-    <!-- Custom Theme Scripts -->
-    <script src="/admin/build/js/custom.min.js"></script>
+<body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- Side Bar -->
+        <?= $this->element('admin_sidebar');?>
+        <!-- Side Bar -->
+        <!-- top navigation -->
+        <?= $this->element('admin_header');?>
+        <!-- /top navigation -->
+        <!-- page content -->
+        <?= $this->fetch('content') ?>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <!-- <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer> -->
+        <!-- /footer content -->
+        <!-- Custom Theme Scripts -->
+        <script src="/admin/build/js/custom.min.js"></script>
+      </div>
+    </div>
+
+    
+
   </body>
 
 </html>

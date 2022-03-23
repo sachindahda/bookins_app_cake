@@ -76,7 +76,7 @@ color:#fff;
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-white">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="https://www.bestbusinessdeals.com.au/wp-content/uploads/2015/05/Best-Business-Deals-New-Logo-e1432819060208.png" width="99" height="61" alt="Best Business Deals." id="logo" ></a>
+            <a class="navbar-brand" href="/"><img src="/img/Best-Business-Deals-New-Logo-e1432819060208.png" width="99" height="61" alt="Best Business Deals." id="logo" ></a>
             <!-- <a class="btn btn-outline-primary btn-primary" href="http://localhost:8765/book-appointment/" id="book-appointment">Home</a> -->
         </div>
         
@@ -121,6 +121,19 @@ color:#fff;
     ],
     'type'=>'text',
     'id'=>'scheduled_at'
+    // 'value' => new DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'))
+]); 
+    ?>
+
+              </div>
+              <div class="mb-3">
+                <?=$this->Form->control('booking_duration',[ 'class' => 'form-control','label' => [
+        'class' => 'thingy',
+        'text' => 'Booking Duration(In Minutes)'
+    ],
+    'type'=>'text',
+    'id'=>'booking_duration',
+    'min'=>15
     // 'value' => new DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'))
 ]); 
     ?>
@@ -331,5 +344,11 @@ color:#fff;
                     minDate: moment().add(3, 'days')
 
                 });
+
+                $("#booking_duration").datetimepicker({
+                  format: 'mm',stepping: 15,
+
+                });
+
             });
         </script>

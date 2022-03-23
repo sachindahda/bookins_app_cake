@@ -34,7 +34,7 @@
                   <li  class="<?php echo ($this->request->getParam('controller')=='Bookings')?'active':'';?>"><a><i class="fa fa-edit"></i> Bookings <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/admin/bookings">Booking Requests</a></li>
-                      <li><a href="#">Booking Calendar</a></li>
+                      <li><a href="/admin/bookings/calendar">Booking Calendar</a></li>
                     </ul>
                   </li>
 
