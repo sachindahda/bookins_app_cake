@@ -54,6 +54,7 @@ class BookingsController extends AppController
               $single_event['end'] = $single['schedule_ends_at'];
               $single_event['title'] = substr($single['description'],0,7);
               $single_event['id']= $single['id'];
+              $single_event['url']= '/admin/bookings/view/'.$single['id'];
               $events[] = $single_event;  
             }
         }

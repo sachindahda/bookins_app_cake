@@ -111,7 +111,7 @@ color:#fff;
 
               <div class="mb-3">
                 <?=$this->Form->control('email',[ 'class' => 'form-control','placeholder'=>'you@example.com']) ?>
-
+                <span id="invalid_email_error" style="color: red"></span>
               </div>
 
               <div class="mb-3">
@@ -349,6 +349,18 @@ color:#fff;
                   format: 'mm',stepping: 15,
 
                 });
+                $("#email").on("keyup change", function(e) {
+                      var email = document.getElementById("email").value;
+                      console.log('email_value',email);
+                      var invalid_email_error = document.getElementById("invalid_email_error");
+                      invalid_email_error.innerHTML = "";
+                      var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+                      if (email && !expr.test(email)) {
+                          invalid_email_error.innerHTML = "Invalid email address.";
+                      }else{
+                        invalid_email_error.innerHTML = "";
+                      }
+                  })
 
             });
         </script>

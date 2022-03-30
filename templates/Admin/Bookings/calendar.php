@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <!--  <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
 
@@ -98,7 +98,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div id="fc_create" data-toggle="modal" data-target="#CalenderModalNew"></div>
     <div id="fc_edit" data-toggle="modal" data-target="#CalenderModalEdit"></div>
@@ -120,38 +120,20 @@
                     header: { left: "prev,next today", center: "title", right: "month,agendaWeek,agendaDay,listMonth" },
                     selectable: !0,
                     selectHelper: !0,
-                    // select: function (e, a, t) {
-                    //   alert('ithe');
-                    //     $("#fc_create").click(),
-                    //         (o = e),
-                    //         (ended = a),
-                    //         $(".antosubmit").on("click", function () {
-                    //             var e = $("#title").val();
-                    //             return a && (ended = a), $("#event_type").val(), e && i.fullCalendar("renderEvent", { title: e, start: o, end: a, allDay: t }, !0), $("#title").val(""), i.fullCalendar("unselect"), $(".antoclose").click(), !1;
-                    //         });
-                    // },
-                    // eventClick: function (e, a, t) {
+                    eventClick: function (info,e) {
+                      console.log(info)
+                      console.log(e)
+                      e.preventDefault(); 
+                      if (info.url) {
+                    
+                        window.open(info.url);
+                      }
 
-                    //     $("#fc_edit").click(),
-                    //         $("#title2").val(e.title),
-                    //         $("#event_type").val(),
-                    //         $(".antosubmit2").on("click", function () {
-                    //             (e.title = $("#title2").val()), i.fullCalendar("updateEvent", e), $(".antoclose2").click();
-                    //         }),
-                    //         i.fullCalendar("unselect");
-                    // },
+                    },
                     editable: 0,
                     displayEventEnd:true,
                     timeFormat: 'h(:mm)a',
                     events:{url:'/admin/bookings/calendar-bookings'}
-                    // events: [
-                    //     { title: "All Day Event", start: new Date(n, t, 1) },
-                    //     { title: "Long Event", start: new Date(n, t, a - 5), end: new Date(n, t, a - 2) },
-                    //     { title: "Meeting", start: new Date(n, t, a, 10, 30), allDay: !1 },
-                    //     { title: "Lunch", start: new Date(n, t, a + 14, 12, 0), end: new Date(n, t, a+14, 14, 0), allDay: !1 },
-                    //     { title: "Birthday Party", start: new Date(n, t, a + 1, 19, 0), end: new Date(n, t, a + 1, 22, 30), allDay: !1 },
-                    //     { title: "Click for Google", start: new Date(n, t, 28), end: new Date(n, t, 29), url: "http://google.com/" },
-                    // ],
                 });
           });
 

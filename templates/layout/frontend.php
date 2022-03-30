@@ -218,7 +218,7 @@ page-template-default page page-id-1260 et_color_scheme_orange et_pb_button_help
 				
 			</div>
 			<div class="et_pb_row et_pb_row_2">
-				<a href="http://localhost:8765/book-appointment/" id="book-appointment">Book Appointment</a>
+				<a href="/book-appointment/" id="book-appointment">Book Appointment</a>
 			</div>
 			<div class="et_pb_row et_pb_row_2">
 				<div class="et_pb_column et_pb_column_1_3 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough">
