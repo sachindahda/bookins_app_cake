@@ -42,5 +42,6 @@ class Booking extends Entity
         'modified' => true,
         'status' => true,
         'booking_duration' => true,
+        'service_type'=>true
     ];
 }

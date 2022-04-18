@@ -50,11 +50,25 @@ class BookingsController extends AppController
             foreach($bookings as $single){
               $single_event=[];
               $single_event['allDay'] = false;
-              $single_event['start'] = $single['scheduled_at'];
-              $single_event['end'] = $single['schedule_ends_at'];
+              $single_event['start'] = date('Y-m-d H:i:s',strtotime($single['scheduled_at']->format('Y-m-d H:i:s')));
+              $single_event['end'] = date('Y-m-d H:i:s',strtotime($single['schedule_ends_at']->format('Y-m-d H:i:s'))); 
               $single_event['title'] = substr($single['description'],0,7);
               $single_event['id']= $single['id'];
-              $single_event['url']= '/admin/bookings/view/'.$single['id'];
+              $single_event['service_type']= ['office_phone'=>'Office Phone','nbn_interent'=>'NBN & Internet','1300_1800_numbers'=>'1300/1800 Numbers','mobiles_tablets'=>'Mobiles & Tablets','cloud_pbx_desktop'=>'Cloud PBX & Desktop','office365_g_suite_other_services'=>'Office365, G Suite & Other Services','consumer_products'=>'Consumer Products'][$single['service_type']];
+              $single_event['email']= $single['email'];
+              $single_event['name']= $single['name'];
+              $single_event['phone']= $single['phone'];
+              $single_event['status']= ucfirst($single['status']);
+              $single_event['type']= ($single['type']=='face_to_face')?'Face to Face':'Zoom';
+              $single_event['reminder_email_sent']= ($single['reminder_email_sent']=='sent')?'Sent':'Not Sent';
+              $single_event['created'] = date('d-m-Y H:i:s',strtotime($single['created']->format('d-m-Y H:i:s')));
+              $single_event['modified'] = date('d-m-Y H:i:s',strtotime($single['modified']->format('d-m-Y H:i:s')));
+              $single_event['schedule_start_time'] = date('d-m-Y H:i:s',strtotime($single['scheduled_at']->format('d-m-Y H:i:s')));
+              $single_event['schedule_end_time'] = date('d-m-Y H:i:s',strtotime($single['schedule_ends_at']->format('d-m-Y H:i:s'))); 
+
+
+
+              // $single_event['url']= '/admin/bookings/view/'.$single['id'];
               $events[] = $single_event;  
             }
         }

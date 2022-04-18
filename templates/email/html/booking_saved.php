@@ -30,7 +30,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;"><b>Hello <?= $booking->name?>!</b>,<br>Your Appointment Details for Date <?= date('Y-m-d H:i:s',strtotime($booking->scheduled_at)); ?> have been saved. You will get the Confirmation via mail,Once it gets approved</p>
+                            <p style="margin: 0;"><b>Hello <?= $booking->name?>!</b>,<br>Your Appointment Details for Date <?= date('d-m-Y H:i:s',strtotime($booking->scheduled_at)); ?> have been saved. You will get the Confirmation via mail,Once it gets approved</p>
                         </td>
                     </tr>
                     <!-- <tr>

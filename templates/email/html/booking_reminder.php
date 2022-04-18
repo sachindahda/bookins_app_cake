@@ -30,7 +30,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;"><b>Hello <?= $booking->name?>!</b>,<br>This is a reminder from Best Business Deals Team about Your Upcoming  Appointment Booking with us on <?= date('Y-m-d H:i:s',strtotime($booking->scheduled_at)); ?> .</p>
+                            <p style="margin: 0;"><b>Hello <?= $booking->name?>!</b>,<br>This is a reminder from Best Business Deals Team about Your Upcoming  Appointment Booking with us on <?= date('d-m-Y H:i:s',strtotime($booking->scheduled_at)); ?> .</p>
                         </td>
                     </tr>
                     <!-- <tr>

@@ -7,7 +7,8 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-
+use Cake\Event\EventInterface;
+use ArrayObject;
 /**
  * Bookings Model
  *
@@ -101,6 +102,11 @@ class BookingsTable extends Table
                     return (in_array($value,[15,30,45,60]));      
                 },
                'message' => 'Please Enter Valid Time Duration',]);
+        $validator
+            ->scalar('service_type')
+            ->maxLength('service_type', 255)
+            ->requirePresence('service_type', 'create')
+            ->notEmptyString('service_type',__('Please Enter Service Type'));
 
         // $validator
         //     ->integer('schedule_ends_at')
@@ -110,4 +116,12 @@ class BookingsTable extends Table
 
         return $validator;
     }
+
+public function beforeMarshal(EventInterface $event, ArrayObject $data, ArrayObject $options)
+{
+    if (isset($data['scheduled_at'])) {
+        $data['scheduled_at'] = date('Y-m-d H:i:s',strtotime($data['scheduled_at']));
+    }
+}
+
 }

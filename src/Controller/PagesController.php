@@ -47,7 +47,6 @@ class PagesController extends AppController
         $booking = $bookingsTable->newEmptyEntity();
         if($this->request->is('post')) {
             $booking = $bookingsTable->patchEntity($booking, $this->request->getData());
-            // pr($booking);die;
 
             if($booking->getErrors()) {
                 $this->Flash->error(__('Unable to Save Appointment Details.  Please make sure you have filled all fields correctly.'));

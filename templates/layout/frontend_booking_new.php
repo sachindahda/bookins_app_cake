@@ -139,6 +139,14 @@ color:#fff;
     ?>
 
               </div>
+              <div class="mb-3">
+                <?=$this->Form->control('service_type',['type'=>'select','options'=>['office_phone'=>'Office Phone','nbn_interent'=>'NBN & Internet','1300_1800_numbers'=>'1300/1800 Numbers','mobiles_tablets'=>'Mobiles & Tablets','cloud_pbx_desktop'=>'Cloud PBX & Desktop','office365_g_suite_other_services'=>'Office365, G Suite & Other Services','consumer_products'=>'Consumer Products'],'empty'=>'Please Select Service', 'class' => 'form-control','label' => [
+        'class' => 'thingy',
+        'text' => 'Service Type'],
+    'id'=>'service_type']); 
+    ?>
+
+              </div>
               <!-- <div class="d-block my-3">
   <div class="custom-control custom-radio">
 
@@ -340,7 +348,7 @@ color:#fff;
         <script type="text/javascript">
             $(function () {
                 $('#scheduled_at').datetimepicker({
-                    format: 'YYYY-MM-DD HH:mm:ss',
+                    format: 'DD-MM-YYYY HH:mm:ss',
                     minDate: moment().add(3, 'days')
 
                 });
