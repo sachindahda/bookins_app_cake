@@ -57,11 +57,12 @@
                 </tr>
                 <tr>
                     <th><?= __('Schedule Starts At') ?></th>
-                    <td><?= h($booking->scheduled_at) ?></td>
+                    <td><?= h(date('d-m-Y g:i A',strtotime($booking->scheduled_at))) ?></td>
+
                 </tr>
                 <tr>
                     <th><?= __('Scheduled Ends At') ?></th>
-                    <td><?= h($booking->schedule_ends_at) ?></td>
+                    <td><?= h(date('d-m-Y g:i A',strtotime($booking->schedule_ends_at))) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Reminder Mail Sent') ?></th>
@@ -73,11 +74,11 @@
                 </tr>
                 <tr>
                     <th><?= __('Created') ?></th>
-                    <td><?= h($booking->created) ?></td>
+                    <td><?= h(date('d-m-Y g:i A',strtotime($booking->created))) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Modified') ?></th>
-                    <td><?= h($booking->modified) ?></td>
+                    <td><?= h(date('d-m-Y g:i A',strtotime($booking->modified))) ?></td>
                 </tr>
             </table>
             <div class="text">
