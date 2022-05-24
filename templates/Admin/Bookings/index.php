@@ -53,13 +53,13 @@
                     <td><?= h($booking->name) ?></td>
                     <td><?= h($booking->phone) ?></td>
                     <td><?= h($booking->email) ?></td>
-                    <td><?= h($booking->scheduled_at) ?></td>
-                    <td><?= h($booking->schedule_ends_at) ?></td>
+                    <td><?= h(date('d-m-Y g:i A',strtotime($booking->scheduled_at))) ?></td>
+                    <td><?= h(date('d-m-Y g:i A',strtotime($booking->schedule_ends_at))) ?></td>
                     <td><?= h(($booking->type=='face_to_face')?'Face to Face':'Zoom') ?></td>
                     <td><?= h(['office_phone'=>'Office Phone','nbn_interent'=>'NBN & Internet','1300_1800_numbers'=>'1300/1800 Numbers','mobiles_tablets'=>'Mobiles & Tablets','cloud_pbx_desktop'=>'Cloud PBX & Desktop','office365_g_suite_other_services'=>'Office365, G Suite & Other Services','consumer_products'=>'Consumer Products'][$booking->service_type]) ?></td>
                     <td><?= h(ucfirst($booking->status)) ?></td>
 
-                    <td><?= h($booking->created) ?></td>
+                    <td><?= h(date('d-m-Y g:i A',strtotime($booking->created))) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $booking->id],['class'=>'btn btn-primary']) ?>
                         <?php if($booking->status=='inactive') {?>

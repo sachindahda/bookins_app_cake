@@ -14,6 +14,12 @@ use Cake\Mailer\Mailer;
  */
 class BookingsController extends AppController
 {
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        $this->loadComponent('Authentication.Authentication');
+    }
+
     /**
      * Index method
      *
@@ -39,11 +45,11 @@ class BookingsController extends AppController
     {
         $this->autoRender=False;       
         $query=$this->Bookings->find('all', [
+            'conditions'=>['status'=>'active'],
              'order' => ['Bookings.created' => 'desc']
          ]);
         $query->enableHydration(false); // Results as arrays instead of entities
         $bookings=$query->all();
-        // pr($bookings);die;
         $events = array();
         
         if(!empty($bookings)){
